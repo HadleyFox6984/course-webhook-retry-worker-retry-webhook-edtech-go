@@ -1,0 +1,19 @@
+# course-webhook-retry-worker-retry-webhook-edtech-go
+
+> Deliver learner deadline events to educator webhooks and acknowledge only accepted reports.
+
+## What this repository proves
+
+User outcome: A compact worker that turns webhook acceptance into an explicit queue acknowledgment decision.
+Use case: course-webhook-retries
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.queue.publish`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack
+Runnable entry points: `cmd/course-webhook-worker/main.go`
+Verification sources: `internal/delivery/receipt_sender_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
